@@ -1,0 +1,93 @@
+.Side_bar {
+  background-color: #ffffff;
+  width: 300px;
+}
+.Side-header {
+  background-color: #253141;
+  height: 100px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  &__list{
+    height: 20px;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__list--name{
+    width: 60px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__user--name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffff;
+  }
+  &__content{
+    width: 60px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__name{
+    color: #ffffff;
+  }
+  &__btn{
+    text-decoration: none;
+  }
+}
+.btn--icon {
+  color: #fff;
+}
+.btn--edit{
+  color: #fff;
+  margin-left: 5px;
+  }
+// 左下
+
+.Side__group{
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  &--box{
+    background-color: bold;
+    width: 300px;
+    height: 900px;
+  }
+  &--name_box{
+    width: 240px;
+    height: 15px;
+    margin: 20px 20px 5px 20px;
+    background-color: bold;
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    text-decoration: none;
+  }
+  &--name{
+    color: #ffffff;
+    font-size: 15px;
+  }
+  &--message_box{
+    background-color:bold;
+    height: 11px;
+    width: 240px;
+    margin: 0px 20px 40px 20px;
+    display: flex;
+    justify-self: start;
+    align-items: center;
+  }
+  &--message{
+    font-size: 11px;
+    color: #ffff;
+  }
+}
