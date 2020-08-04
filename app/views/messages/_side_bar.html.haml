@@ -1,1 +1,39 @@
-<サイドバー>
+.Side_bar
+  .Side-header
+    .Side-header__list
+      .Side-header__list--name
+        %p.Side-header__user--name
+          masa
+      .Side-header__list--content
+        %ul.Side-header__content
+          %li.Side-header__btn--icon
+            = link_to "#", class:"btn--icon" do
+              = icon('fas', 'edit')
+          %li.Side-header__btn--edit
+            = link_to "#", class:"btn--edit" do
+              = icon('fa', 'cog')
+
+  .Side__group
+    .Side__group--box
+      = link_to "#", class:"Side__group--name_box" do
+        %p.Side__group--name
+          techcamp
+      .Side__group--message_box
+        %p.Side__group--message
+          テスト
+
+    .Side__group--box
+      = link_to "#", class:"Side__group--name_box" do
+        %p.Side__group--name
+          techcamp
+      .Side__group--message_box
+        %p.Side__group--message
+          テスト
+
+    .Side__group--box
+      = link_to "#", class:"Side__group--name_box" do
+        %p.Side__group--name
+          techcamp
+      .Side__group--message_box
+        %p.Side__group--message
+          テスト
