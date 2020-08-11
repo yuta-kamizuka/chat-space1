@@ -9,12 +9,11 @@ module ChatSpace
   class Application < Rails::Application
     config.load_defaults 6.0
     config.generators do |g|
-    config.il8.default_locale = :ja
+    config.i18n.default_locale = :ja
       g.stylesheets false
       g.javacripts false
       g.helper false
       g.test_framework false
-
     end
   end
 end

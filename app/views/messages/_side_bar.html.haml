@@ -7,33 +7,18 @@
       .Side-header__list--content
         %ul.Side-header__content
           %li.Side-header__btn--icon
-            = link_to "#", class:"btn--icon" do
+            = link_to new_group_path(current_user), class:"btn--icon" do
               = icon('fas', 'edit')
           %li.Side-header__btn--edit
             = link_to edit_user_path(current_user), class:"btn--edit" do
               = icon('fa', 'cog')
 
   .Side__group
-    .Side__group--box
-      = link_to "#", class:"Side__group--name_box" do
-        %p.Side__group--name
-          techcamp
-      .Side__group--message_box
-        %p.Side__group--message
-          テスト
-
-    .Side__group--box
-      = link_to "#", class:"Side__group--name_box" do
-        %p.Side__group--name
-          techcamp
-      .Side__group--message_box
-        %p.Side__group--message
-          テスト
-
-    .Side__group--box
-      = link_to "#", class:"Side__group--name_box" do
-        %p.Side__group--name
-          techcamp
-      .Side__group--message_box
-        %p.Side__group--message
-          テスト
+    - current_user.groups.each do |group|
+      .Side__group--box
+        = link_to "#", class:"Side__group--name_box" do
+          .Side__group--name
+            = group.name
+        .Side__group--message_box
+          .Side__group--message
+            メッセージはまだありません
