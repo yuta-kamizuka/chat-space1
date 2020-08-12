@@ -2,48 +2,27 @@
   .Main-header
     .Main-header__box
       .Main-header__box--group
-        %h3.Main-header__box--group__name
-          かみ
+        .Main-header__box--group__name
+          = @group.name
       .Main-header__box--under-group
-        %p.Main-header__box--under-group__member
-          Member：aaa
+        .Main-header__box--under-group__member
+          - @group.users.each do |user|
+            = user.name
     .Main-header__right
       .Main-header__right--box
         .Main-header__right--box__edit_box
           .Main-header__right--box__edit_box__btn
-            = link_to "#" ,class: "Edit__btn" do
+            = link_to edit_group_path(@group), class: "Edit__btn" do
               Edit
 
   .Message-folder
-    .Message-folder__name_box
-      .Message-folder__name_box__left
-        %p.Message-folder__name_box__left--user
-          masa
-      %p.Message-folder__name_box__right
-
-        2020年08月02日 13時05分
-
-    .Message-folder__comment_box
-      %p.Message-folder__comment_box__cmt
-        こんにちは
-
-    .Message-folder__name_box
-      .Message-folder__name_box__left
-        %p.Message-folder__name_box__left--user
-          masa
-      .Message-folder__name_box__right
-        %p.Message-folder__name_box__right--user
-          2020年08月02日 13時05分
-
-    .Message-folder__comment_box
-      %p.Message-folder__comment_box__cmt
-        こんにちは
+    = render @messages
 
   .Footer
-    %form.new_message
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %lader{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'

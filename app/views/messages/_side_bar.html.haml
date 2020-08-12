@@ -16,9 +16,9 @@
   .Side__group
     - current_user.groups.each do |group|
       .Side__group--box
-        = link_to "#", class:"Side__group--name_box" do
+        = link_to group_messages_path(group) do
           .Side__group--name
             = group.name
         .Side__group--message_box
           .Side__group--message
-            メッセージはまだありません
+            = group.show_last_message
