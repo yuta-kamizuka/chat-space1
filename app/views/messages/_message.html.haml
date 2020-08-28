@@ -1,12 +1,13 @@
-.Message-folder__name_box
-  .Message-folder__name_box__left
-    .Message-folder__name_box__left--user
-      = message.user.name
-    .Message-folder__name_box__right
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+.Message-folder__parent
+  .Message-folder__parent__name_box
+    .Message-folder__parent__name_box__left
+      .Message-folder__parent__name_box__left--user
+        = message.user.name
+      .Message-folder__parent__name_box__right
+        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
 
-.Message-folder__comment_box
-  - if message.content.present?
-    .Message-folder__comment_box__cmt
-      = message.content
-  = image_tag message.image.url, class: 'Message__image' if message.image.present?
+  .Message-folder__parent__comment_box
+    - if message.content.present?
+      .Message-folder__parent__comment_box__cmt
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
